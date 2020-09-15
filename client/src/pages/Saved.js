@@ -5,7 +5,7 @@ import { Col, Row, Container } from '../components/Grid';
 import Jumbotron from '../components/Jumbotron';
 import API from '../utils/API';
 
-function Detail() {
+function Saved() {
 	const [saved, setSaved] = useState([]);
 
 	function deleteBook(id) {
@@ -42,12 +42,13 @@ function Detail() {
 								<Col size='sm-12' key={book._id}>
 									<div className='mb-4 border p-3 rounded shadow'>
 										<img src={book.image} alt={book.title} />
-										<DeleteBtn onClicn={() => deleteBook(book._id)} />
+										<DeleteBtn onClick={() => deleteBook(book._id)} />
+										<Link to={'/books/' + book.id} />
 										<strong className='m-4'>Title: {book.title}</strong>
 										<strong>Author: {book.author}</strong>
 										<p>Description: {book.description}</p>
 										<strong>
-											<a href={book.link} target='_blank'>
+											<a href={book.link} target='_blank' rel="noopener noreferrer">
 												click here to view book
 											</a>
 										</strong>
@@ -64,4 +65,4 @@ function Detail() {
 	);
 }
 
-export default Detail;
+export default Saved;
