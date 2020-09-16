@@ -13,7 +13,7 @@ function Search() {
 	const [saveBook, setSavedBook] = useState({});
 
 	useEffect(() => {
-		API.searchTitle('the matrix')
+		API.searchTitle('The Notebook')
 			.then((res) => {
 				setBooks(res.data.items);
 			})
@@ -55,7 +55,7 @@ function Search() {
 	return (
 		<Container fluid>
 			<Row>
-				<Col size='md-6'>
+				<Col size='md-12'>
 					{/* HEADER */}
 					<Jumbotron>
 						<h1>Google Books Search</h1>
@@ -74,10 +74,10 @@ function Search() {
 						</FormBtn>
 					</form>
 				</Col>
-				<Col size='md-6 sm-12'>
-					<Jumbotron>
+			</Row>
+			<Row>
+				<Col size='md-12 sm-12'>
 						<h1>Search Results</h1>
-					</Jumbotron>
 					{books.length ? (
 						<List>
 							{books.map((book) => (

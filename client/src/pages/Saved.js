@@ -28,13 +28,15 @@ function Saved() {
 	return (
 		<Container fluid>
 			<Row>
-				<Col size='md-6 sm-12'>
+				<Col size='md-12 sm-12'>
 					<Jumbotron>
 						<h1>Google Books Search</h1>
 						<h3>Search for and Save Books of Interest</h3>
 					</Jumbotron>
 				</Col>
-				<Col size='md-6 sm-12'>
+			</Row>
+			<Row>
+				<Col size='md-12 sm-12'>
 					<h1>Saved Books</h1>
 					<Row>
 						{saved.length ? (
@@ -48,7 +50,11 @@ function Saved() {
 										<strong>Author: {book.author}</strong>
 										<p>Description: {book.description}</p>
 										<strong>
-											<a href={book.link} target='_blank' rel="noopener noreferrer">
+											<a
+												href={book.link}
+												target='_blank'
+												rel='noopener noreferrer'
+											>
 												click here to view book
 											</a>
 										</strong>
