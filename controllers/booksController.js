@@ -32,6 +32,7 @@ module.exports = {
 	},
 	search: function (req, res) {
 		let query = req.params.title;
+		console.log(req.params.title);
 
 		let config = {
 			method: 'get',
