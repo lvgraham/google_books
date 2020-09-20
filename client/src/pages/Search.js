@@ -46,7 +46,7 @@ function Search() {
 	function handleFormSubmit(event) {
 		event.preventDefault();
 		if (formObject.search) {
-			API.searchTitle(formObject.search)
+			API.search(formObject.search)
 				.then((res) => setBooks(res.data.items))
 				.catch((err) => console.log(err));
 		}

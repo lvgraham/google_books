@@ -1,7 +1,7 @@
 const db = require('../models');
 const axios = require('axios');
 
-// Defining methods for the booksController
+// methods for the controller define how to access the data in the database/api
 module.exports = {
 	findAll: function (req, res) {
 		db.Book.find(req.query)
@@ -37,12 +37,13 @@ module.exports = {
 		let config = {
 			method: 'get',
 			url:
-				`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCItMycLlXL1l-yigM_SBuKr_s3wREjiFA&maxResults=7`,
+				`https://www.googleapis.com/books/v1/volumes?q=${query}+intitle:keyes&key=${process.env.API_KEY}&maxResults=7`,
 			headers: {},
 		};
 
 		axios(config)
 			.then((response) => {
+        console.log(response.data)
 				res.json(response.data);
 			})
 			.catch((err) => {
