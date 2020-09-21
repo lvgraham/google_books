@@ -32,8 +32,8 @@ function Search() {
 			link: book.infoLink,
 		};
 		API.saveBook(newBook).then((res) =>
-			setSavedBook(res.data).catch((err) => console.log(err))
-		);
+			setSavedBook(res.data)).catch((err) => console.log(err))
+		;
 	}
 
 	// Handles updating component state when the user types into the input field
@@ -91,7 +91,7 @@ function Search() {
 										alt={book.volumeInfo.title}
 									/>
 									<strong>Title: {book.volumeInfo.title}</strong>
-									<strong>Author: {book.volumeInfo.authors[0]}</strong>
+									<strong>Author: {book.volumeInfo.authors}</strong>
 									<p>Description: {book.volumeInfo.description}</p>
 									<a
 										href={book.volumeInfo.infoLink}
