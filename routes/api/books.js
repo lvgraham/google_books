@@ -15,7 +15,7 @@ router
 
 //matches with /api/books/search/${query}
 router
-  route("/search/:title")
+  .route("/search/:title")
   .get(booksController.search);
 
 module.exports = router;

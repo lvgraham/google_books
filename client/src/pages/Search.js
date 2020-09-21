@@ -46,8 +46,8 @@ function Search() {
 	// Then reload books from the database
 	function handleFormSubmit(event) {
 		event.preventDefault();
-		if (formObject.search) {
-			API.search(formObject.search)
+		if (formObject.title) {
+			API.searchTitle(formObject.title)
 				.then((res) => {
 					console.log('TESTING2: ', res);
 					setBooks(res.data.items);
@@ -70,10 +70,10 @@ function Search() {
 					<form>
 						<Input
 							onChange={handleInputChange}
-							name='search'
+							name='title'
 							placeholder='enter book title'
 						/>
-						<FormBtn disabled={!formObject.search} onClick={handleFormSubmit}>
+						<FormBtn disabled={!formObject.title} onClick={handleFormSubmit}>
 							search
 						</FormBtn>
 					</form>
