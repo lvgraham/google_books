@@ -15,12 +15,13 @@ function Search() {
 	useEffect(() => {
 		API.searchTitle('The Notebook')
 			.then((res) => {
+				console.log('TESTING1: ', res);
 				setBooks(res.data.items);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	});
+	}, []);
 
 	function saveBookSelection(book) {
 		let newBook = {
@@ -47,7 +48,10 @@ function Search() {
 		event.preventDefault();
 		if (formObject.search) {
 			API.search(formObject.search)
-				.then((res) => setBooks(res.data.items))
+				.then((res) => {
+					console.log('TESTING2: ', res);
+					setBooks(res.data.items);
+				})
 				.catch((err) => console.log(err));
 		}
 	}
@@ -77,7 +81,7 @@ function Search() {
 			</Row>
 			<Row>
 				<Col size='md-12 sm-12'>
-						<h1>Search Results</h1>
+					<h1>Search Results</h1>
 					{books.length ? (
 						<List>
 							{books.map((book) => (
