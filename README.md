@@ -14,4 +14,4 @@ This application includes a search page and saved page:
 
 You are able to view the deployed application [here.](https://pacific-cliffs-98328.herokuapp.com/)
 
-![example](https://media.giphy.com/media/LfimZukXDWKwNBLCzy/giphy.gif)
+![gif of book search](https://giphy.com/gifs/LfimZukXDWKwNBLCzy/html5)
